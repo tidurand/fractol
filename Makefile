@@ -1,11 +1,11 @@
-SRCS = fractol.c
+SRCS = fractol.c fractol_utils.c fractales.c
 
 OBJS = $(SRCS:.c=.o)
 
 NAME = fractol
 
 %.o: %.c
-	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
+	$(CC) -Wall -Wextra -Imlx -c $< -o $@
 
 all: $(NAME)
 
