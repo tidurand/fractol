@@ -6,7 +6,7 @@
 /*   By: tidurand < tidurand@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 08:25:32 by tidurand          #+#    #+#             */
-/*   Updated: 2022/01/20 08:22:13 by tidurand         ###   ########.fr       */
+/*   Updated: 2022/01/20 17:09:12 by tidurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ typedef struct	s_plan {
 	double		y_max;
 	int			move_x;
 	int			move_y;
+	int			move_mouse_x;
+	int			move_mouse_y;
 }				t_plan;
 
 typedef struct	s_mouse {
