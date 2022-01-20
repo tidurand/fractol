@@ -6,18 +6,24 @@
 /*   By: tidurand < tidurand@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/17 08:25:32 by tidurand          #+#    #+#             */
-/*   Updated: 2022/01/20 05:35:51 by tidurand         ###   ########.fr       */
+/*   Updated: 2022/01/20 08:22:13 by tidurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
-# define WIN_WIDTH 1200
-# define WIN_HEIGHT 800
-# define SIZE 400
+# define WIN_WIDTH 1350
+# define WIN_HEIGHT 1000
+# define SIZE 500
 #include <mlx.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
+
+typedef struct	s_mlx {
+	void	*mlx;
+	void	*mlx_win;
+}				t_mlx;
 
 typedef struct	s_img {
 	void	*img;
@@ -26,11 +32,6 @@ typedef struct	s_img {
 	int		line_length;
 	int		endian;
 }				t_img;
-
-typedef struct	s_mlx {
-	void	*mlx;
-	void	*mlx_win;
-}				t_mlx;
 
 typedef struct	s_z {
 	double		x;
@@ -66,6 +67,7 @@ typedef struct	s_colors {
 typedef struct	s_fractal {
 	int		julia;
 	int		mandelbrot;
+	int		burningship;
 }				t_fractal;
 
 typedef struct	s_all {
@@ -81,6 +83,7 @@ typedef struct	s_all {
 int	mouse_position(t_all *data);
 void	julia(t_all *data);
 void	mandelbrot(t_all *data);
+void	burningship(t_all *data);
 int	ft_strcmp(char *s1, char *s2);
 void	update_fractal(t_all *data);
 void	pixel_put(t_img *data, int x, int y, int color);
