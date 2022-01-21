@@ -1,3 +1,5 @@
+CC = gcc
+
 SRCS = fractol.c fractol_utils.c colors.c zoom.c features.c parsing.c julia.c mandelbrot.c features_2.c
 
 OBJS = $(SRCS:.c=.o)
