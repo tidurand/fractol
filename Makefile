@@ -7,15 +7,21 @@ NAME = fractol
 %.o: %.c
 	$(CC) -Wall -Wextra -Werror -Imlx -c $< -o $@
 
-all: $(NAME)
+all: mlx/libmlx.a $(NAME)
 
 $(NAME): $(OBJS)
 	$(CC) $(OBJS) -Lmlx -lmlx -framework OpenGL -framework AppKit -o $(NAME)
+
+mlx/libmlx.a:
+	make -C mlx
 
 clean:
 	rm -f $(OBJS)
 
 fclean: clean
 	rm -f $(NAME)
+	make clean -C mlx
 
 re: fclean all
+
+.PHONY : all clean fclean
