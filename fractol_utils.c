@@ -6,7 +6,7 @@
 /*   By: tidurand < tidurand@student.42.fr>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/19 13:31:09 by tidurand          #+#    #+#             */
-/*   Updated: 2022/01/24 09:33:34 by tidurand         ###   ########.fr       */
+/*   Updated: 2022/01/27 10:31:41 by tidurand         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	pre_parsing(char *s)
 	i = 0;
 	while (s[i])
 	{
+		if (s[i] == '-')
+			i++;
 		if (s[i] != '.' && !(s[i] >= '0' && s[i] <= '9'))
 		{
 			printf("parameters should be between -1 and 1\n");
